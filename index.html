@@ -14,6 +14,9 @@
     <div class = "header" style="text-align:center;padding-top: 70px;margin: 0 20%;width: 60%; background-color: darkblue;">
     <h1>Budget App</h1>
     <h2 id = "getTotal">Total Amount: </h2>
+
+    <h4 id = "totearnings">Total Amount: </h4>
+    <h4 id = "totexpenses">Total Amount: </h4>
     
     </div>
 
@@ -51,11 +54,11 @@
         </div>
         <div id = "listofexpenses" style = "float:left;width: 100%;">
             <!-- <br> -->
-            <div id = "new" style="height: 30px;width:100%;background-color: floralwhite;color:black">
+            <!-- <div id = "new" style="height: 30px;width:100%;background-color: floralwhite;color:black">
             
                 <h4 style="margin: 0;float: left;"> Expense </h4>             
                  <h4 style="margin: 0;float: right;">$$$</h4>
-            </div>
+            </div> -->
 
         </div>
         
@@ -69,39 +72,49 @@
       var totalexpenses = 0;
       var expense = "";
       var num = 0;
+      var color = "";
 
 
-function addElement(displ){
+function addElement(displ, colo){
 
        var newElement = document.createElement('div');
-        newElement.style.width = "100%";
-        newElement.style.height = "50px";
-        newElement.style.background = "green";
-        newElement.style.color = "white";
-        newElement.style.marginBottom = "10px";
-        newElement.innerHTML = displ;
 
+       if(colo == "red"){
+        newElement.style.background = "red";
+       }
+       else{
+        newElement.style.background = "green";
+       }
+        newElement.style.height = "40px";
+        newElement.style.color = "white";
+        newElement.style.margin = "10px";
+        newElement.innerHTML = displ;
+        
          var list = document.getElementById('listofexpenses');
          list.appendChild(newElement);
       }
 
 function addExpense(){
 
+        
         var disp = ""
         var expense = document.getElementById("label").value;
         var num = document.getElementById("value").value;
        
+        color = "green";
         total += parseInt(num);
         totalearnings += parseInt(num);
 
-        document.getElementById('getTotal').innerHTML = "$" + total;
+        document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+        document.getElementById('totearnings').innerHTML = "Total Earnings $" + totalearnings;
+
         disp = expense + "     $" + num;
 
         document.getElementById("label").value = "";
         document.getElementById("value").value = "";
  
 
-        addElement(disp);
+        addElement(disp, color);
 
 }
 
@@ -111,17 +124,21 @@ var disp = ""
 var expense = document.getElementById("label").value;
 var num = document.getElementById("value").value;
 
+color = "red";
+
 total -= parseInt(num);
 totalexpenses += parseInt(num);
 
-document.getElementById('getTotal').innerHTML = "$" + total;
+document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+document.getElementById('totexpenses').innerHTML = "Total Expenses $" + totalexpenses;
+
 disp = expense + "     $" + num;
 
 document.getElementById("label").value = "";
 document.getElementById("value").value = "";
 
 
-addElement(disp);
+addElement(disp, color);
 
 }
 
