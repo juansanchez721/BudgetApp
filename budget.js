@@ -36,6 +36,7 @@ function addElement(colo, exp, nu){
  else{
   alldivs.style.borderBottom= "2px solid green";
   alldivs.style.color= "green";
+//   alldivs.style.fontSize="22px";
 
 
   // alldivs.style.backgroundColor = "gray";
