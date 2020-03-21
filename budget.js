@@ -26,29 +26,51 @@ function addElement(color) {
   {
     li.style.backgroundColor = "green";
   }
+  else{
+    li.style.backgroundColor = "red";
+  }
 
   var inputValue = document.getElementById("label").value;
   var cost = document.getElementById("value").value;
   
-  var t = document.createTextNode(inputValue);
-  // t.style.backgroundColor = "red";
-  var c = document.createTextNode(cost);
-  
-  li.appendChild(t);
-  li.appendChild(c);
 
-  if (inputValue === '') {
+  var spa = document.createElement("SPAN");
+  var tx = document.createTextNode(inputValue);
+  spa.appendChild(tx);
+  spa.style.backgroundColor = "purple";
+
+  li.appendChild(spa);
+
+
+  // var t = document.createTextNode(inputValue);
+  // var c = document.createTextNode(cost);
+
+  var sp = document.createElement("SPAN");
+  var t = document.createTextNode(inputValue);
+  sp.appendChild(t);
+  sp.style.backgroundColor = "blue";
+  sp.style.alignItems = "center";
+
+
+  li.appendChild(sp);
+  
+  // li.appendChild(spa);
+  // li.appendChild(c);
+
+  if (inputValue === '' || cost === '') {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
     list.insertBefore(li, list.childNodes[0]);
   }
-  document.getElementById("label").value = "";
+  // document.getElementById("label").value = "";
+  // document.getElementById("value").value = "";
 
   var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("x");
   span.className = "close";
   span.appendChild(txt);
+  // span.style.float = "right";
   li.appendChild(span);
 
 
