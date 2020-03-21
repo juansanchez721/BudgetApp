@@ -37,8 +37,7 @@ function addElement(color) {
   var spa = document.createElement("SPAN");
   var tx = document.createTextNode(inputValue);
   spa.appendChild(tx);
-  spa.style.backgroundColor = "purple";
-
+  // spa.style.backgroundColor = "purple";
   li.appendChild(spa);
 
 
@@ -46,12 +45,11 @@ function addElement(color) {
   // var c = document.createTextNode(cost);
 
   var sp = document.createElement("SPAN");
-  var t = document.createTextNode(inputValue);
+  var t = document.createTextNode(cost);
+  // sp.style.float = "right";
+
   sp.appendChild(t);
-  sp.style.backgroundColor = "blue";
-  sp.style.alignItems = "center";
-
-
+  // sp.style.backgroundColor = "blue";
   li.appendChild(sp);
   
   // li.appendChild(spa);
@@ -67,8 +65,8 @@ function addElement(color) {
   // document.getElementById("value").value = "";
 
   var span = document.createElement("SPAN");
-  var txt = document.createTextNode("x");
-  span.className = "close";
+  var txt = document.createTextNode("\u00d7");
+  // span.className = "close";
   span.appendChild(txt);
   // span.style.float = "right";
   li.appendChild(span);
