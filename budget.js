@@ -36,7 +36,9 @@ function addElement(color) {
 
   var spa = document.createElement("SPAN");
   var tx = document.createTextNode(inputValue);
-  spa.appendChild(tx);
+  spa.appendChild(tx);  
+  spa.className = "texttoleft";
+
   // spa.style.backgroundColor = "purple";
   li.appendChild(spa);
 
@@ -50,6 +52,8 @@ function addElement(color) {
 
   sp.appendChild(t);
   // sp.style.backgroundColor = "blue";
+  sp.className = "close";
+
   li.appendChild(sp);
   
   // li.appendChild(spa);
@@ -66,8 +70,9 @@ function addElement(color) {
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00d7");
-  // span.className = "close";
+  span.className = "close";
   span.appendChild(txt);
+  span.style.width = "20px";
   // span.style.float = "right";
   li.appendChild(span);
 
