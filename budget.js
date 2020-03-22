@@ -24,10 +24,13 @@ function addElement(color) {
 
   if(color == "Green")
   {
-    li.style.backgroundColor = "green";
+    li.style.borderBottom = "2px solid green";
+    li.style.color = "green";
   }
   else{
-    li.style.backgroundColor = "red";
+    li.style.borderBottom = "3px solid darkred";
+    li.style.color = "darkred";
+
   }
 
   var inputValue = document.getElementById("label").value;
@@ -47,7 +50,7 @@ function addElement(color) {
   // var c = document.createTextNode(cost);
 
   var sp = document.createElement("SPAN");
-  var t = document.createTextNode(cost);
+  var t = document.createTextNode("$"+cost);
   // sp.style.float = "right";
 
   sp.appendChild(t);
@@ -72,7 +75,7 @@ function addElement(color) {
   var txt = document.createTextNode("\u00d7");
   span.className = "close";
   span.appendChild(txt);
-  span.style.width = "20px";
+  // span.style.width = "20px";
   // span.style.float = "right";
   li.appendChild(span);
 
