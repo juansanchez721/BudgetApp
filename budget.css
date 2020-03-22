@@ -108,8 +108,8 @@ input{
   }
 
   #myUL{
-    margin: 15 10%;
-    min-width: 350px;
+    /* margin: 15 10%; */
+    /* min-width: 350px; */
 
     padding: 0;
     text-align: center;
@@ -125,6 +125,7 @@ input{
     }
 
     body {
-      background-color: lightblue;
     }
+
+
   }
