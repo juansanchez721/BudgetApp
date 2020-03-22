@@ -5,18 +5,16 @@
 // var num = 0;
 // var color = "";
 // var list = document.getElementById('listofexpenses');
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
 var list = document.getElementById("myUL");
-
-// var myNodelist = document.getElementsByTagName("LI");
-// var i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   var span = document.createElement("SPAN");
-//   var txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
 
 function addElement(color) {
 
@@ -36,56 +34,44 @@ function addElement(color) {
   var inputValue = document.getElementById("label").value;
   var cost = document.getElementById("value").value;
   
-
-  var spa = document.createElement("SPAN");
-  var tx = document.createTextNode(inputValue);
-  spa.appendChild(tx);  
-  spa.className = "texttoleft";
-
-  // spa.style.backgroundColor = "purple";
-  li.appendChild(spa);
-
-
-  // var t = document.createTextNode(inputValue);
-  // var c = document.createTextNode(cost);
-
-  var sp = document.createElement("SPAN");
-  var t = document.createTextNode("$"+cost);
-  // sp.style.float = "right";
-
-  sp.appendChild(t);
-  // sp.style.backgroundColor = "blue";
-  sp.className = "close";
-
-  li.appendChild(sp);
-  
-  // li.appendChild(spa);
-  // li.appendChild(c);
-
   if (inputValue === '' || cost === '') {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
     list.insertBefore(li, list.childNodes[0]);
+    // alert("supfam");
   }
-  // document.getElementById("label").value = "";
-  // document.getElementById("value").value = "";
+
+  var spa = document.createElement("SPAN");
+  var tx = document.createTextNode(inputValue);
+  spa.appendChild(tx);  
+  spa.className = "texttoleft";
+  li.appendChild(spa);
+
+
+
+  var sp = document.createElement("SPAN");
+  var t = document.createTextNode("$"+cost);
+  sp.appendChild(t);
+  sp.className = "dollars";
+  li.appendChild(sp);
+  
+
+  
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00d7");
   span.className = "close";
   span.appendChild(txt);
-  // span.style.width = "20px";
-  // span.style.float = "right";
   li.appendChild(span);
 
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
 
-  // for (i = 0; i < close.length; i++) {
-  //   close[i].onclick = function() {
-  //     var div = this.parentElement;
-  //     div.style.display = "none";
-  //   }
-  // }
 }
 
 // function addElement(colo, exp, nu){

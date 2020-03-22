@@ -103,10 +103,16 @@ input{
       /* float: left; */
   }
 
-  .close{
+  .close, .dollars  {
     text-align: right;
     /* width: 10px; */
   }
+
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
 
   .texttoleft{
     text-align: left;
@@ -135,7 +141,12 @@ input{
       white-space: nowrap;
       text-overflow: ellipsis; */
     }
+
+
+
+
+
+
+
      }
 
-
-  }
