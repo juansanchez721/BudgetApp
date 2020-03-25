@@ -1,6 +1,6 @@
-// var total = 0;
-// var totalearnings = 0;
-// var totalexpenses = 0;
+var total = 0;
+var totalearnings = 0;
+var totalexpenses = 0;
 // var expense = "";
 // var num = 0;
 // var color = "";
@@ -19,24 +19,37 @@ var list = document.getElementById("myUL");
 function addElement(color) {
 
   var li = document.createElement("li");
+  
+  var inputValue = document.getElementById("label").value;
+  var cost = document.getElementById("value").value;
+  
 
   if(color == "Green")
   {
     li.style.borderBottom = "2px solid green";
     li.style.color = "green";
+    total += parseInt(cost);
+    document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+    totalearnings += parseInt(cost);
+    document.getElementById('totearnings').innerHTML = "Total Earnings $" + totalearnings;
+
+
   }
   else{
     li.style.borderBottom = "3px solid darkred";
     li.style.color = "darkred";
+    total -= parseInt(cost);
+    document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+    totalexpenses -= parseInt(cost);
+    document.getElementById('totexpenses').innerHTML = "Total Expenses $" + totalexpenses;
+
 
   }
 
-  var inputValue = document.getElementById("label").value;
-  var cost = document.getElementById("value").value;
-  
   if (inputValue === '' || cost === '') {
     alert("You must write something!");
-  } else {
+  } 
+  else {
     document.getElementById("myUL").appendChild(li);
     list.insertBefore(li, list.childNodes[0]);
     // alert("supfam");
@@ -48,29 +61,41 @@ function addElement(color) {
   spa.className = "texttoleft";
   li.appendChild(spa);
 
-
-
   var sp = document.createElement("SPAN");
   var t = document.createTextNode("$"+cost);
   sp.appendChild(t);
   sp.className = "dollars";
   li.appendChild(sp);
   
-
-  
-
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00d7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
 
-  for (i = 0; i < close.length; i++) {
+  // for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
+      if(color == "Green"){
+             alert("yooo");
+             total -= parseInt(cost);
+             document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+             totalearnings -= parseInt(cost);
+             document.getElementById('totearnings').innerHTML = "Total Earnings $" + totalearnings;
+         
+      }
+      else{
+        alert("RED RED");
+        total += parseInt(cost);
+        document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
+        totalexpenses += parseInt(cost);
+        document.getElementById('totexpenses').innerHTML = "Total Expenses $" + totalexpenses;
+    
+      }
+
       var div = this.parentElement;
       div.style.display = "none";
     }
-  }
+  // }
 
 }
 
