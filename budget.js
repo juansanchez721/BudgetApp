@@ -23,11 +23,18 @@ function addElement(color) {
   var inputValue = document.getElementById("label").value;
   var cost = document.getElementById("value").value;
 
-  if (inputValue === '' || cost === '') {
-    alert("You must write something!");
+  // if(isNaN(cost)){
+  //   alert(cost);
+  // }
+
+  if (inputValue === '' || cost === '' || isNaN(cost)) {
+    alert("Please make sure you input the correct values.");
     BREAK;
   } 
   else {
+      document.getElementById("label").value = "";
+  document.getElementById("value").value = "";
+
     document.getElementById("myUL").appendChild(li);
     list.insertBefore(li, list.childNodes[0]);
     // alert("supfam");
@@ -36,7 +43,7 @@ function addElement(color) {
 
   if(color == "Green")
   {
-    li.style.borderBottom = "2px solid green";
+    li.style.borderBottom = ".5px solid green";
     li.style.color = "green";
     total += parseFloat(cost);
     document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
@@ -46,7 +53,7 @@ function addElement(color) {
 
   }
   else{
-    li.style.borderBottom = "3px solid darkred";
+    li.style.borderBottom = "1px solid darkred";
     li.style.color = "darkred";
     total -= parseFloat(cost);
     document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
