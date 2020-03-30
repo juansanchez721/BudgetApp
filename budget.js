@@ -22,6 +22,16 @@ function addElement(color) {
   
   var inputValue = document.getElementById("label").value;
   var cost = document.getElementById("value").value;
+
+  if (inputValue === '' || cost === '') {
+    alert("You must write something!");
+    BREAK;
+  } 
+  else {
+    document.getElementById("myUL").appendChild(li);
+    list.insertBefore(li, list.childNodes[0]);
+    // alert("supfam");
+  }
   
 
   if(color == "Green")
@@ -46,14 +56,7 @@ function addElement(color) {
 
   }
 
-  if (inputValue === '' || cost === '') {
-    alert("You must write something!");
-  } 
-  else {
-    document.getElementById("myUL").appendChild(li);
-    list.insertBefore(li, list.childNodes[0]);
-    // alert("supfam");
-  }
+ 
 
   var spa = document.createElement("SPAN");
   var tx = document.createTextNode(inputValue);
@@ -76,7 +79,7 @@ function addElement(color) {
   // for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       if(color == "Green"){
-             alert("yooo");
+            //  alert("yooo");
              total -= parseInt(cost);
              document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
              totalearnings -= parseInt(cost);
@@ -84,7 +87,7 @@ function addElement(color) {
          
       }
       else{
-        alert("RED RED");
+        // alert("RED RED");
         total += parseInt(cost);
         document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
         totalexpenses += parseInt(cost);
