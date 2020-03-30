@@ -38,9 +38,9 @@ function addElement(color) {
   {
     li.style.borderBottom = "2px solid green";
     li.style.color = "green";
-    total += parseInt(cost);
+    total += parseFloat(cost);
     document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
-    totalearnings += parseInt(cost);
+    totalearnings += parseFloat(cost);
     document.getElementById('totearnings').innerHTML = "Total Earnings $" + totalearnings;
 
 
@@ -48,9 +48,9 @@ function addElement(color) {
   else{
     li.style.borderBottom = "3px solid darkred";
     li.style.color = "darkred";
-    total -= parseInt(cost);
+    total -= parseFloat(cost);
     document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
-    totalexpenses -= parseInt(cost);
+    totalexpenses -= parseFloat(cost);
     document.getElementById('totexpenses').innerHTML = "Total Expenses $" + totalexpenses;
 
 
@@ -80,17 +80,17 @@ function addElement(color) {
     close[i].onclick = function() {
       if(color == "Green"){
             //  alert("yooo");
-             total -= parseInt(cost);
+             total -= parseFloat(cost);
              document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
-             totalearnings -= parseInt(cost);
+             totalearnings -= parseFloat(cost);
              document.getElementById('totearnings').innerHTML = "Total Earnings $" + totalearnings;
          
       }
       else{
         // alert("RED RED");
-        total += parseInt(cost);
+        total += parseFloat(cost);
         document.getElementById('getTotal').innerHTML = "Overall Total $" + total;
-        totalexpenses += parseInt(cost);
+        totalexpenses += parseFloat(cost);
         document.getElementById('totexpenses').innerHTML = "Total Expenses $" + totalexpenses;
     
       }
